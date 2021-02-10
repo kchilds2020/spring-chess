@@ -6,15 +6,6 @@ import javax.persistence.*;
 @Table(name="users")
 public class User {
     @Id
-    @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
-    )
     private int Id;
     private String email_address;
     private String first_name;
@@ -24,11 +15,11 @@ public class User {
     public User() {
     }
 
-    public User(int id, String email_address, String firstname, String lastname, String password) {
+    public User(int id, String email_address, String first_name, String last_name, String password) {
         Id = id;
         this.email_address = email_address;
-        this.first_name = firstname;
-        this.last_name = lastname;
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.password = password;
     }
 
@@ -48,20 +39,20 @@ public class User {
         this.email_address = email_address;
     }
 
-    public String getFirstname() {
+    public String getFirst_name() {
         return first_name;
     }
 
-    public void setFirstname(String firstname) {
-        this.first_name = firstname;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public String getLastname() {
+    public String getLast_name() {
         return last_name;
     }
 
-    public void setLastname(String lastname) {
-        this.last_name = lastname;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
     public String getPassword() {
