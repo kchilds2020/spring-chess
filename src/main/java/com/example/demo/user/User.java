@@ -7,10 +7,13 @@ import javax.persistence.*;
 public class User {
     @Id
     private int Id;
+    private String username;
     private String email_address;
     private String first_name;
     private String last_name;
     private String password;
+    private String role;
+    private boolean enabled;
 
     public User() {
     }
@@ -29,6 +32,14 @@ public class User {
 
     public void setId(int id) {
         Id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail_address() {
@@ -63,14 +74,33 @@ public class User {
         this.password = password;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "Id=" + Id +
+                ", username='" + username + '\'' +
                 ", email_address='" + email_address + '\'' +
                 ", first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
                 ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", enabled=" + enabled +
                 '}';
     }
 }
